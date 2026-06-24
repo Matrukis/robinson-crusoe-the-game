@@ -25,6 +25,8 @@
     {"id":{"name":"obj_solid_wall","path":"objects/obj_solid_wall/obj_solid_wall.yy",},},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"CustomFunctions","path":"scripts/CustomFunctions/CustomFunctions.yy",},},
+    {"id":{"name":"spr_gun","path":"sprites/spr_gun/spr_gun.yy",},},
     {"id":{"name":"spr_playerDown","path":"sprites/spr_playerDown/spr_playerDown.yy",},},
     {"id":{"name":"spr_playerLeft","path":"sprites/spr_playerLeft/spr_playerLeft.yy",},},
     {"id":{"name":"spr_playerRight","path":"sprites/spr_playerRight/spr_playerRight.yy",},},

@@ -1,8 +1,8 @@
 //pega os inputs do player
-rightkey = keyboard_check(ord("D"));
-leftkey = keyboard_check(ord("A"));
-upkey = keyboard_check(ord("W"));
-downkey = keyboard_check(ord("S"));
+	rightkey = keyboard_check(ord("D"));
+	leftkey = keyboard_check(ord("A"));
+	upkey = keyboard_check(ord("W"));
+	downkey = keyboard_check(ord("S"));
 
 
 //movimento do player
@@ -37,12 +37,20 @@ downkey = keyboard_check(ord("S"));
 	//mover o jogador
 	x += xspd;
 	y += yspd;
+	
+	depth = -bbox_bottom;
 #endregion
 
+//mira do player
+	centerY = y + centerYOffset;
+	
+	//mira
+	aimDir = point_direction(x, centerY, mouse_x, mouse_y);
 
 //sprite control
+#region
 	//tendo certeza que o player olhe para a direção certa
-	face = round(moveDir/90);
+	face = round(aimDir/90);
 	
 	if face == 4 { face = 0;};
 	
@@ -56,3 +64,4 @@ downkey = keyboard_check(ord("S"));
 	//colocar o sprite do player
 	mask_index = sprite[3];
 	sprite_index = sprite[face]
+#endregion

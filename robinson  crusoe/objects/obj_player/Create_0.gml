@@ -1,18 +1,20 @@
 //variaveis pra movimento
-moveDir = 0;
-moveSpd = 2;
-xspd = 0;
-yspd = 0;
+	moveDir = 0;
+	moveSpd = 2;
+	xspd = 0;
+	yspd = 0;
 
 //sprite control
-centerYOffset = -10;
+	centerYOffset = -16;
+	centerY = y + centerYOffset;//botar no evento step
 
-aimDir = 0;
+	weaponOffsetDist = 4;
+	aimDir = 0;
 
-face = 3;
-sprite[0] = spr_playerRight;
-sprite[1] = spr_playerUp;
-sprite[2] = spr_playerLeft;
-sprite[3] = spr_playerDown;
+	face = 3;
+	sprite[0] = spr_playerRight;
+	sprite[1] = spr_playerUp;
+	sprite[2] = spr_playerLeft;
+	sprite[3] = spr_playerDown;
 
 
