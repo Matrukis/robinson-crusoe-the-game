@@ -20,3 +20,4 @@
 
 //informacao da arma
 	bulletobj = obj_bullet;
+	weaponLength = sprite_get_bbox_right(spr_gun)  - sprite_get_xoffset(spr_gun	);

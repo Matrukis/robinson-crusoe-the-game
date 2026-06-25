@@ -3,7 +3,7 @@
 	leftkey = keyboard_check(ord("A"));
 	upkey = keyboard_check(ord("W"));
 	downkey = keyboard_check(ord("S"));
-	shootkey = mouse_check_button_pressed(mb_left)
+	shootkey = mouse_check_button(mb_left)
 
 //movimento do player
 #region
@@ -70,7 +70,9 @@
 
 if shootkey
 {
-	var _bulletInst = instance_create_depth(x, centerY, depth-100, bulletobj)
+	var _xoffset = lengthdir_x(weaponLength + weaponOffsetDist, aimDir);
+	var _yoffset = lengthdir_y	(weaponLength + weaponOffsetDist, aimDir);
+	var _bulletInst = instance_create_depth(x + 4 + _xoffset, centerY - 2 + _yoffset, depth-100, bulletobj)
 	
 	//mudar a direção das balas
 	with( _bulletInst )
