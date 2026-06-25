@@ -6,8 +6,8 @@
   "name":"obj_solid_wall",
   "overriddenProperties":[],
   "parent":{
-    "name":"robinson  crusoe",
-    "path":"robinson  crusoe.yyp",
+    "name":"Objetos",
+    "path":"folders/Objetos.yy",
   },
   "parentObjectId":{
     "name":"obj_wall",

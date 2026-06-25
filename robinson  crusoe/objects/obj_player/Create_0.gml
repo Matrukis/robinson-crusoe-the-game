@@ -18,3 +18,5 @@
 	sprite[3] = spr_playerDown;
 
 
+//informacao da arma
+	bulletobj = obj_bullet;
