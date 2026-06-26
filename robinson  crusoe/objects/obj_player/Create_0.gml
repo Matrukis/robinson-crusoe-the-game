@@ -19,5 +19,19 @@
 
 
 //informacao da arma
+	shootTimer = 0;
+	
 	bulletobj = obj_bullet;
-	weaponLength = sprite_get_bbox_right(spr_gun)  - sprite_get_xoffset(spr_gun	);
+	
+	trabuco = {
+		sprite : spr_gun, 
+		length : sprite_get_bbox_right(spr_gun)  - sprite_get_xoffset(spr_gun),
+		bulletobj : obj_bullet,
+		cooldown : 9,
+	}
+	
+	machadao = {
+	}
+	
+	weapon = trabuco;
+	

@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"CustomFunctions",
+  "%Name":"weaponCreate",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"CustomFunctions",
+  "name":"weaponCreate",
   "parent":{
     "name":"robinson  crusoe",
     "path":"robinson  crusoe.yyp",

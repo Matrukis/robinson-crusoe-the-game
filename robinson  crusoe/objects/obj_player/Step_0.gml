@@ -67,12 +67,16 @@
 #endregion
 
 //atirar com a arma
-
-if shootkey
+if shootTimer > 0 {shootTimer--;}; 
+if shootkey && shootTimer <= 0
 {
-	var _xoffset = lengthdir_x(weaponLength + weaponOffsetDist, aimDir);
-	var _yoffset = lengthdir_y	(weaponLength + weaponOffsetDist, aimDir);
-	var _bulletInst = instance_create_depth(x + 4 + _xoffset, centerY - 2 + _yoffset, depth-100, bulletobj)
+	
+	//reset the timer
+	shootTimer = weapon.cooldown;
+	
+	var _xoffset = lengthdir_x(weapon.length + weaponOffsetDist, aimDir);
+	var _yoffset = lengthdir_y	(weapon.length + weaponOffsetDist, aimDir);
+	var _bulletInst = instance_create_depth(x + 4 + _xoffset, centerY - 2 + _yoffset, depth-100, weapon.bulletobj)
 	
 	//mudar a direção das balas
 	with( _bulletInst )

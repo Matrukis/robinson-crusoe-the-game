@@ -8,6 +8,7 @@
     {"name":"obj_solid_wall","order":1,"path":"objects/obj_solid_wall/obj_solid_wall.yy",},
     {"name":"obj_wall","order":2,"path":"objects/obj_wall/obj_wall.yy",},
     {"name":"CustomFunctions","order":8,"path":"scripts/CustomFunctions/CustomFunctions.yy",},
+    {"name":"weaponCreate","order":10,"path":"scripts/weaponCreate/weaponCreate.yy",},
     {"name":"spr_bullet","order":7,"path":"sprites/spr_bullet/spr_bullet.yy",},
     {"name":"spr_gun","order":6,"path":"sprites/spr_gun/spr_gun.yy",},
     {"name":"spr_playerLeft","order":3,"path":"sprites/spr_playerLeft/spr_playerLeft.yy",},

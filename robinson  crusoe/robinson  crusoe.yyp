@@ -28,6 +28,7 @@
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"CustomFunctions","path":"scripts/CustomFunctions/CustomFunctions.yy",},},
+    {"id":{"name":"weaponCreate","path":"scripts/weaponCreate/weaponCreate.yy",},},
     {"id":{"name":"spr_bullet","path":"sprites/spr_bullet/spr_bullet.yy",},},
     {"id":{"name":"spr_gun","path":"sprites/spr_gun/spr_gun.yy",},},
     {"id":{"name":"spr_playerDown","path":"sprites/spr_playerDown/spr_playerDown.yy",},},
