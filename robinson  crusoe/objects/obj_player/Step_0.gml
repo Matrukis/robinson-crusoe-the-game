@@ -3,8 +3,9 @@
 	leftkey = keyboard_check(ord("A"));
 	upkey = keyboard_check(ord("W"));
 	downkey = keyboard_check(ord("S"));
+	equipKey = keyboard_check_pressed(ord("2"));
+	unequipKey = keyboard_check_pressed(ord("1"));
 	shootkey = mouse_check_button(mb_left)
-
 //movimento do player
 #region
 	//pega a direção
@@ -62,25 +63,52 @@
 	}
 	
 	//colocar o sprite do player
-	mask_index = sprite[3];
-	sprite_index = sprite[face]
-#endregion
-
-//atirar com a arma
-if shootTimer > 0 {shootTimer--;}; 
-if shootkey && shootTimer <= 0
+	// Escolhe os sprites conforme a arma equipada
+if (weapon == noone)
 {
-	
-	//reset the timer
-	shootTimer = weapon.cooldown;
-	
-	var _xoffset = lengthdir_x(weapon.length + weaponOffsetDist, aimDir);
-	var _yoffset = lengthdir_y	(weapon.length + weaponOffsetDist, aimDir);
-	var _bulletInst = instance_create_depth(x + 4 + _xoffset, centerY - 2 + _yoffset, depth-100, weapon.bulletobj)
-	
-	//mudar a direção das balas
-	with( _bulletInst )
-	{
-		dir = other.aimDir;
-	}
+    mask_index = spriteNormal[3];
+    sprite_index = spriteNormal[face];
+}
+else
+{
+    mask_index = spriteArmed[3];
+    sprite_index = spriteArmed[face];
+}
+#endregion
+// Equipar / desequipar
+if (unequipKey)
+{
+    weapon = noone;
+}
+
+if (equipKey)
+{
+    weapon = trabuco;
+}
+
+// Atirar
+if (weapon != noone)
+{
+    if (shootTimer > 0)
+        shootTimer--;
+
+    if (shootkey && shootTimer <= 0)
+    {
+        shootTimer = weapon.cooldown;
+
+        var _xoffset = lengthdir_x(weapon.length + weaponOffsetDist, aimDir);
+        var _yoffset = lengthdir_y(weapon.length + weaponOffsetDist, aimDir);
+
+        var _bulletInst = instance_create_depth(
+            x + 4 + _xoffset,
+            centerY - 2 + _yoffset,
+            depth - 100,
+            weapon.bulletobj
+        );
+
+        with (_bulletInst)
+        {
+            dir = other.aimDir;
+        }
+    }
 }
