@@ -45,17 +45,40 @@
 //mira do player
 	centerY = y + centerYOffset;
 	
-	//mira
-	aimDir = point_direction(x, centerY, mouse_x, mouse_y);
-
 //sprite control
 #region
-	//tendo certeza que o player olhe para a direção certa
-	face = round(aimDir/90);
-	
-	if face == 4 { face = 0;};
-	
-	//animação
+
+if (weapon != noone)
+{
+    // Armado: olha para o mouse
+    aimDir = point_direction(x, centerY, mouse_x, mouse_y);
+
+    face = round(aimDir / 90);
+
+    if (face == 4)
+        face = 0;
+}
+else
+{
+    // Desarmado: olha para a direção que está andando
+    if (_horizKey != 0 || _vertKey != 0)
+    {
+        if (abs(_horizKey) > abs(_vertKey))
+        {
+            face = (_horizKey > 0) ? 0 : 2;
+        }
+        else
+        {
+            face = (_vertKey > 0) ? 3 : 1;
+        }
+    }
+}
+
+//animação
+if (xspd == 0 && yspd == 0)
+{
+    image_index = 0;
+}
 	
 	if xspd == 0 && yspd == 0
 	{
@@ -66,12 +89,10 @@
 	// Escolhe os sprites conforme a arma equipada
 if (weapon == noone)
 {
-    mask_index = spriteNormal[3];
     sprite_index = spriteNormal[face];
 }
 else
 {
-    mask_index = spriteArmed[3];
     sprite_index = spriteArmed[face];
 }
 #endregion
@@ -112,3 +133,4 @@ if (weapon != noone)
         }
     }
 }
+
